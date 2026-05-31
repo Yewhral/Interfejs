@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "deploy:asd": "npm run build && wrangler deploy --name asd",
+    "deploy:ddd": "npm run build && wrangler deploy --name ddd",
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types"
