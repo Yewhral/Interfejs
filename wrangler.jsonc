@@ -1,5 +1,5 @@
 {
-  "name": "interfejs",
+  "name": "if-js",
   "compatibility_date": "2026-05-31",
   "compatibility_flags": ["global_fetch_strictly_public"],
   "workers_dev": true,
