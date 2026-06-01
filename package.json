@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "interfejs",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "deploy:asd-interfejs": "npm run build && wrangler deploy --name asd-interfejs",
-    "deploy:ddd-interfejs": "npm run build && wrangler deploy --name ddd-interfejs",
+    "deploy:asd-interfejs": "npm run deploy -- asd-interfejs",
+    "deploy:ddd-interfejs": "npm run deploy -- ddd-interfejs",
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types"

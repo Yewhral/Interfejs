@@ -1,40 +1,31 @@
-export type SiteKey = "asd-interfejs" | "ddd-interfejs";
+import siteConfigData from './site-configs.json';
 
 export type SiteConfig = {
-  key: SiteKey;
-  title: string;
-  headline: string;
-  description: string;
-  accent: string;
+	key: string;
+	title: string;
+	headline: string;
+	description: string;
+	accent: string;
 };
 
-export const siteConfigs: Record<SiteKey, SiteConfig> = {
-  "asd-interfejs": {
-    key: "asd-interfejs",
-    title: "ASD Home",
-    headline: "Home ASD",
-    description: "Ten widok jest renderowany dla subdomeny ASD.",
-    accent: "#2563eb",
-  },
-  "ddd-interfejs": {
-    key: "ddd-interfejs",
-    title: "DDD Home",
-    headline: "Home DDD",
-    description: "Ten widok jest renderowany dla subdomeny DDD.",
-    accent: "#16a34a",
-  },
+export const siteConfigs: Record<string, SiteConfig> = Object.fromEntries(
+	Object.entries(siteConfigData).map(([key, config]) => [key, { key, ...config }]),
+);
+
+export const defaultSiteConfig: SiteConfig = {
+	key: 'default',
+	title: 'Default Home',
+	headline: 'Default view',
+	description: 'Nie znaleziono konfiguracji dla tej subdomeny.',
+	accent: '#475569',
 };
 
 export function getSiteConfig(hostname: string): SiteConfig {
-  const subdomain = hostname.split(".")[0]?.toLowerCase();
+	const workerName = hostname.split('.')[0]?.toLowerCase();
 
-  return (
-    siteConfigs[subdomain as SiteKey] || {
-      key: "def",
-      title: "def Home",
-      headline: "def def",
-      description: "Ten widok jest renderowany dla subdomeny def view.",
-      accent: "#2563eb",
-    }
-  );
+	if (!workerName) {
+		return defaultSiteConfig;
+	}
+
+	return siteConfigs[workerName] ?? defaultSiteConfig;
 }

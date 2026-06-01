@@ -1,0 +1,14 @@
+{
+  "asd-interfejs": {
+    "title": "ASD Home",
+    "headline": "Home ASD",
+    "description": "Ten widok jest renderowany dla subdomeny ASD.",
+    "accent": "#2563eb"
+  },
+  "ddd-interfejs": {
+    "title": "DDD Home",
+    "headline": "Home DDD",
+    "description": "Ten widok jest renderowany dla subdomeny DDD.",
+    "accent": "#16a34a"
+  }
+}
