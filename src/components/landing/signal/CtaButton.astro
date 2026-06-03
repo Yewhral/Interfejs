@@ -1,0 +1,70 @@
+---
+
+
+---
+
+<a href="#about" class="cta-btn" aria-label="Scroll to summary section">
+  Learn more
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="5" x2="12" y2="19"></line>
+    <polyline points="19 12 12 19 5 12"></polyline>
+  </svg>
+</a>
+
+<style>
+  .cta-btn {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) translateY(15px);
+    visibility: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background-color: #0f172a;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    z-index: 1;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      visibility: visible;
+    }
+  }
+
+  .cta-btn:hover {
+    transform: translateX(-50%) translateY(-3px);
+    background-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+  }
+
+  .cta-btn svg {
+    transition: transform 0.2s ease;
+  }
+
+  .cta-btn:hover svg {
+    transform: translateY(3px);
+  }
+
+	@media (min-width: 821px) {
+		.cta-btn {
+			animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 4s forwards;
+		}
+	}
+
+	@media (max-width: 820px) {
+		.cta-btn {
+      display: none;
+    }
+	}
+</style>

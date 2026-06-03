@@ -1,5 +1,6 @@
 ---
-import type { SiteConfig } from '../../config';
+import type { SiteConfig } from '../../../config';
+import CtaButton from './CtaButton.astro';
 
 type Props = {
 	config: SiteConfig;
@@ -41,6 +42,7 @@ const { config, hostname } = Astro.props;
 			</div>
 		</dl>
 	</div>
+	<CtaButton />
 </section>
 
 <style>
