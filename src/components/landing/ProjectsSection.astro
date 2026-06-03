@@ -1,0 +1,141 @@
+---
+const projects = [
+	{
+		title: 'System onboardingowy',
+		description: 'Lekki panel do prowadzenia nowych klientow przez proces startu uslugi.',
+		category: 'Product design',
+	},
+	{
+		title: 'Automatyzacja operacji',
+		description: 'Workflow laczacy formularze, dane klienta i powiadomienia zespolu.',
+		category: 'Internal tools',
+	},
+	{
+		title: 'Landing uslugi B2B',
+		description: 'Strona nastawiona na szybkie zrozumienie oferty i kontakt sprzedazowy.',
+		category: 'Web experience',
+	},
+];
+---
+
+<section id="projects" class="section projects" aria-labelledby="projects-title">
+	<div class="section-inner">
+		<div class="section-heading">
+			<p class="eyebrow">Przykladowe projekty</p>
+			<h2 id="projects-title">Pierwsze kierunki do rozbudowy.</h2>
+		</div>
+
+		<div class="project-grid">
+			{
+				projects.map((project) => (
+					<article class="project-card">
+						<p>{project.category}</p>
+						<h3>{project.title}</h3>
+						<span>{project.description}</span>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.section {
+		padding: clamp(56px, 9vw, 112px) 0;
+	}
+
+	.section-inner {
+		width: min(1120px, calc(100% - 40px));
+		margin: 0 auto;
+	}
+
+	.projects {
+		background: #ffffff;
+	}
+
+	.section-heading {
+		display: grid;
+		gap: 12px;
+	}
+
+	.eyebrow {
+		margin: 0;
+		color: var(--accent);
+		font-size: 13px;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		max-width: 780px;
+		margin: 0;
+		color: #111827;
+		font-size: clamp(34px, 5vw, 64px);
+		line-height: 1;
+		letter-spacing: 0;
+	}
+
+	.project-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 16px;
+		margin-top: 36px;
+	}
+
+	.project-card {
+		display: flex;
+		min-width: 0;
+		min-height: 240px;
+		flex-direction: column;
+		justify-content: space-between;
+		border: 1px solid #e2e8f0;
+		border-radius: 8px;
+		padding: 22px;
+		background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+	}
+
+	.project-card p {
+		margin: 0;
+		color: var(--accent);
+		font-size: 12px;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+
+	h3 {
+		margin: 10px 0 0;
+		color: #111827;
+		font-size: 22px;
+		line-height: 1.2;
+		letter-spacing: 0;
+	}
+
+	.project-card span {
+		display: block;
+		margin-top: 28px;
+		color: #475569;
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 820px) {
+		.project-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.project-card {
+			min-height: 190px;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.section {
+			padding: 48px 0;
+		}
+
+		.section-inner {
+			width: min(100% - 28px, 1120px);
+		}
+	}
+</style>

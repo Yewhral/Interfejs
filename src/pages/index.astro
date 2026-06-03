@@ -1,5 +1,5 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import LandingPage from './LandingPage.astro';
 import { getSiteConfig } from '../config';
 import Layout from '../layouts/Layout.astro';
 
@@ -8,5 +8,5 @@ const config = getSiteConfig(hostname);
 ---
 
 <Layout title={config.title}>
-	<Welcome config={config} hostname={hostname} />
+	<LandingPage config={config} hostname={hostname} />
 </Layout>

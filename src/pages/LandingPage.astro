@@ -1,0 +1,54 @@
+---
+import type { SiteConfig } from '../config';
+import AboutSection from '../components/landing/AboutSection.astro';
+import ProjectsSection from '../components/landing/ProjectsSection.astro';
+import SignalSection from '../components/landing/SignalSection.astro';
+import SiteFooter from '../components/landing/SiteFooter.astro';
+import SiteNav from '../components/landing/SiteNav.astro';
+
+type Props = {
+	config: SiteConfig;
+	hostname: string;
+};
+
+const { config, hostname } = Astro.props;
+---
+
+<div class="page-shell" style={`--accent: ${config.accent}`}>
+	<a class="skip-link" href="#main-content">Przejdz do tresci</a>
+	<SiteNav />
+
+	<main id="main-content">
+		<SignalSection config={config} hostname={hostname} />
+		<AboutSection />
+		<ProjectsSection />
+	</main>
+
+	<SiteFooter />
+</div>
+
+<style>
+	.page-shell {
+		min-height: 100svh;
+		color: #111827;
+		background: #f7f8fb;
+	}
+
+	.skip-link {
+		position: fixed;
+		top: 12px;
+		left: 12px;
+		z-index: 20;
+		transform: translateY(-160%);
+		border-radius: 6px;
+		padding: 10px 14px;
+		color: #ffffff;
+		background: #111827;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.skip-link:focus {
+		transform: translateY(0);
+	}
+</style>
