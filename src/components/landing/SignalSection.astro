@@ -12,23 +12,32 @@ const { config, hostname } = Astro.props;
 <section id="signal" class="section hero" aria-labelledby="hero-title">
 	<div class="section-inner hero-grid">
 		<div class="hero-copy">
-			<p class="eyebrow">Signal brief</p>
-			<h1 id="hero-title">what if</h1>
-			<p class="lead">{config.headline}</p>
+			<p class="eyebrow">Ever wondered...</p>
+			<h1 id="hero-title">What if</h1>
+			<p class="lead">you could work with <strong>an engineer</strong> who...</p>
 		</div>
+		<dl class="signal-panel" aria-label="Why work with me">
+			<div class="signal-card">
+				<dt>Takes ownership</dt>
+				<dd>
+					Drives projects from idea to production and takes responsibility for
+					the outcome.
+				</dd>
+			</div>
 
-		<dl class="signal-panel" aria-label="Dane konfiguracji strony">
-			<div>
-				<dt>Config key</dt>
-				<dd>{config.key}</dd>
+			<div class="signal-card">
+				<dt>Solves complex challenges</dt>
+				<dd>
+					Builds scalable, maintainable and high-performance frontend
+					applications.
+				</dd>
 			</div>
-			<div>
-				<dt>Description</dt>
-				<dd>{config.description}</dd>
-			</div>
-			<div>
-				<dt>Hostname</dt>
-				<dd>{hostname}</dd>
+
+			<div class="signal-card">
+				<dt>Focuses on business impact</dt>
+				<dd>
+					Aligns technical decisions with product goals and your business needs.
+				</dd>
 			</div>
 		</dl>
 	</div>
@@ -37,6 +46,7 @@ const { config, hostname } = Astro.props;
 <style>
 	.section {
 		padding: clamp(56px, 9vw, 112px) 0;
+		background: radial-gradient(circle at top left,color-mix(in srgb,var(--accent) 18%,transparent),transparent 34rem),linear-gradient(135deg,#f8fafc,#fff,#eef2f7);
 	}
 
 	.section-inner {
@@ -48,7 +58,6 @@ const { config, hostname } = Astro.props;
 		min-height: calc(100svh - 72px);
 		display: grid;
 		align-items: center;
-		background: #ffffff;
 	}
 
 	.hero-grid {
@@ -89,34 +98,35 @@ const { config, hostname } = Astro.props;
 
 	.signal-panel {
 		display: grid;
-		gap: 14px;
+		gap: 18px;
 		margin: 0;
 	}
 
-	.signal-panel div {
-		min-width: 0;
+	.signal-card {
+		position: relative;
+		padding: 24px;
 		border: 1px solid #e2e8f0;
-		border-radius: 8px;
-		padding: 18px;
-		background: #ffffff;
+		border-radius: 12px;
+		background: white;
 		box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+		overflow: hidden;
 	}
 
-	dt {
-		margin-bottom: 6px;
-		color: #64748b;
-		font-size: 12px;
-		font-weight: 800;
-		text-transform: uppercase;
-	}
-
-	dd {
-		margin: 0;
-		overflow-wrap: anywhere;
+	.signal-card dt {
+		margin-bottom: 8px;
 		color: #0f172a;
-		font-size: 16px;
-		line-height: 1.5;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 1.2;
+		text-transform: none;
 	}
+
+	.signal-card dd {
+		margin: 0;
+		color: #475569;
+		font-size: 15px;
+		line-height: 1.6;
+	}	
 
 	@media (max-width: 820px) {
 		.hero {
