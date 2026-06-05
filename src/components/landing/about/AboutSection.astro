@@ -1,3 +1,7 @@
+---
+import CtaButton from './../CtaButton.astro';
+---
+
 <section id="about" class="section about" aria-labelledby="about-title">
 	<div class="section-inner">
 		<p class="eyebrow">About Me</p>
@@ -34,18 +38,24 @@
 			</article>
 		</div>
 	</div>
+	<CtaButton
+		href="#projects"
+		ariaLabel="Scroll to case studies section"
+		label="View Projects"
+		immediate
+	/>
 </section>
 
 <style>
-<style>
   .section {
-    padding: clamp(56px, 9vw, 112px) 0;
+		position: relative;
+    padding: clamp(56px, 7vw, 112px) 0;
   }
 
   .section-inner {
     width: min(1120px, calc(100% - 40px));
     margin: 0 auto;
-		padding: 72px 0;
+		padding: 0 0 60px 0;
   }
 
   .about {

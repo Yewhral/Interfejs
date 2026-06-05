@@ -1,10 +1,26 @@
 ---
+type Props = {
+	href?: string;
+	label?: string;
+	ariaLabel?: string;
+	immediate?: boolean;
+};
 
+const {
+	href = '#about',
+	label = 'Learn more',
+	ariaLabel = 'Scroll to summary section',
+	immediate = false,
+} = Astro.props;
 
 ---
 
-<a href="#about" class="cta-btn" aria-label="Scroll to summary section">
-  Learn more
+<a
+	href={href}
+	class={`cta-btn${immediate ? ' cta-btn--immediate' : ''}`}
+	aria-label={ariaLabel}
+>
+  {label}
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <line x1="12" y1="5" x2="12" y2="19"></line>
     <polyline points="19 12 12 19 5 12"></polyline>
@@ -56,8 +72,14 @@
     transform: translateY(3px);
   }
 
+	.cta-btn--immediate {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+		visibility: visible;
+	}
+
 	@media (min-width: 821px) {
-		.cta-btn {
+		.cta-btn:not(.cta-btn--immediate) {
 			animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 4s forwards;
 		}
 	}
