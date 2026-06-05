@@ -3,7 +3,8 @@ import type { SiteConfig } from '../config';
 import AboutSection from '../components/landing/about/AboutSection.astro';
 import ProjectsSection from '../components/landing/projects/ProjectsSection.astro';
 import SignalSection from '../components/landing/signal/SignalSection.astro';
-import SiteFooter from '../components/landing/SiteFooter.astro';
+import ContactSection from '../components/landing/contact/ContactSection.astro';
+import SiteFooter from '../components/landing/footer/SiteFooter.astro';
 import SiteNav from '../components/landing/SiteNav.astro';
 
 type Props = {
@@ -21,6 +22,7 @@ const { config, hostname } = Astro.props;
 		<SignalSection config={config} hostname={hostname} />
 		<AboutSection />
 		<ProjectsSection />
+		<ContactSection config={config} />
 	</main>
 
 	<SiteFooter />
