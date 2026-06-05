@@ -1,0 +1,95 @@
+<header class="site-header" id="top">
+	<nav class="nav" aria-label="Main navigation">
+		<a class="brand" href="#top" aria-label="Interfejs - home page">Interfejs</a>
+		<ul class="nav-links">
+			<li><a href="#signal">Intro</a></li>
+			<li><a href="#about">About Me</a></li>
+			<li><a href="#projects">Case Studies</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+</header>
+
+<style>
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		border-bottom: 1px solid #e5e7eb;
+		background: rgba(255, 255, 255, 0.94);
+		backdrop-filter: blur(14px);
+	}
+
+	.nav {
+		display: flex;
+		width: min(1120px, calc(100% - 40px));
+		min-height: 72px;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		margin: 0 auto;
+	}
+
+	.brand {
+		color: #111827;
+		font-size: 20px;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		border-radius: 6px;
+	}
+
+	.nav-links a {
+		display: inline-flex;
+		padding: 10px 12px;
+		color: #475569;
+		font-size: 14px;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.nav-links a:hover {
+		color: #111827;
+		background: #f1f5f9;
+	}
+
+	a:focus-visible {
+		outline: 3px solid color-mix(in srgb, var(--accent) 45%, #ffffff);
+		outline-offset: 3px;
+	}
+
+	@media (max-width: 820px) {
+		.nav {
+			align-items: flex-start;
+			flex-direction: column;
+			justify-content: center;
+			padding: 14px 0;
+		}
+
+		.nav-links {
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		.nav-links a {
+			padding: 8px 10px;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.nav {
+			width: min(100% - 28px, 1120px);
+		}
+	}
+</style>

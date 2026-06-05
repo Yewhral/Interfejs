@@ -1,0 +1,49 @@
+<footer id="contact" class="site-footer">
+	<div class="footer-inner">
+		<p class="brand-logo">Interfejs</p>
+		<div class="summary">Usługi Programistyczne Interfejs - Michał Zabrzyjewski</div>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		border-top: 1px solid #e5e7eb;
+		background: #111827;
+		color: #ffffff;
+	}
+
+	.footer-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: min(1120px, calc(100% - 40px));
+		gap: 20px;
+		margin: 0 auto;
+		padding: 28px 0;
+	}
+
+	.brand-logo {
+		font-size: 18px;
+    font-weight: 600;
+		margin: 0;
+	}
+
+	.summary {
+		font-size: 14px;
+		color: #9ca3af;
+		text-align: end;
+		width: 100%;
+	}
+
+	@media (max-width: 520px) {
+		.footer-inner {
+			width: min(100% - 28px, 1120px);
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.summary {
+			text-align: center;
+		}
+	}
+</style>
