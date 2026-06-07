@@ -1,19 +1,19 @@
 ---
-const projects = [
+const items = [
 	{
 		title: 'Lorem Ipsum System',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		category: 'Product design',
+		category: 'lala design',
 	},
 	{
 		title: 'Lorem Ipsum Automatyzacja',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		category: 'Internal tools',
+		category: 'lala tools',
 	},
 	{
 		title: 'Lorem Ipsum Landing',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		category: 'Web experience',
+		category: 'lala experience',
 	},
 ];
 ---
@@ -27,11 +27,11 @@ const projects = [
 
 		<div class="project-grid">
 			{
-				projects.map((project) => (
+				items.map((item) => (
 					<article class="project-card">
-						<p>{project.category}</p>
-						<h3>{project.title}</h3>
-						<span>{project.description}</span>
+						<p>{item.category}</p>
+						<h3>{item.title}</h3>
+						<span>{item.description}</span>
 					</article>
 				))
 			}
