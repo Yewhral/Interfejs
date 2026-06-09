@@ -1,47 +1,203 @@
 ---
-const items = [
-	{
-		title: 'Lorem Ipsum System',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		category: 'lala design',
-	},
-	{
-		title: 'Lorem Ipsum Automatyzacja',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		category: 'lala tools',
-	},
-	{
-		title: 'Lorem Ipsum Landing',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		category: 'lala experience',
-	},
-];
----
+import CtaButton from "../CtaButton.astro";
 
-<section id="projects" class="section projects" aria-labelledby="projects-title">
+
+const items = [
+  {
+    title: 'Sales Engagement Platform',
+    subtitle: 'Large-scale SaaS platform used by thousands of field representatives and managers across multiple markets.',
+    description: 'Contributed to the evolution of the product from an early-stage startup into a mature, market-leading platform over multiple years of continuous development. Played a key role in shaping and scaling the frontend architecture as the product expanded in complexity, user base, and feature scope. Shipped high-performance, data-intensive interfaces supporting mapping-based workflows, reporting systems, and real-time event-driven features. Worked extensively with Google Maps-driven interfaces, WebSocket-based interactions, and an AI-assisted chat layer integrated into core product flows.',
+    stack: ['React', 'TypeScript', 'Redux', 'RTK Query', 'Google Maps API', 'REST APIs', 'WebSockets', 'Chart.js', 'Tailwind', 'SASS', 'AI'],
+    group: 'main'
+  },
+  {
+    title: 'Presentation Visualization Platform',
+    subtitle: 'Data-driven presentation and visualization tool inspired by slide-based editors, built around a canvas-based rendering engine.',
+    description: 'Developed a highly interactive interface for generating and manipulating presentation-like content from structured data sources. Focused on performance, dynamic layout systems, and responsive canvas interactions. The project emphasized real-time rendering logic and UI composition patterns similar to modern presentation tools.',
+    stack: ['React', 'Canvas API', 'TypeScript', 'MUI'],
+    group: 'main'
+  },
+  {
+    title: 'Energy Documentation & Compliance Platform',
+    subtitle: 'Energy sector platform for generating and managing energy efficiency documentation and related workflows.',
+    description: 'Built a cross-platform application (web + mobile via Ionic Capacitor) focused on structured data entry, complex validation-heavy forms, and generation of standardized reports such as energy certificates. Supported white-labeled deployments and configurable landing pages for different clients and regions.',
+    stack: ['React', 'Ionic', 'Capacitor', 'React Hook Form', 'TypeScript'],
+    group: 'main'
+  },
+  {
+    title: '3D Spatial Visualization Platform',
+    subtitle: 'Interactive 3D visualization platform for construction and real estate applications.',
+    description: 'Developed browser-based tool for exploring spatial data, including buildings, interiors, and urban environments. Worked on performance-heavy rendering pipelines, interactive camera controls, and animation systems for smooth transitions between states. Integrated Three.js with additional animation tooling to support complex scene interactions and data-driven visualizations.',
+    stack: ['Three.js', 'WebGL', 'Tween.js', 'JavaScript'],
+    group: 'main'
+  },
+  {
+    title: 'Document Processing & Invoice Automation Platform',
+    subtitle: 'Migration of project from React to Vue 3.',
+    description: 'Acted as technical lead for frontend architecture decisions during a large-scale rewrite, ensuring feature parity while introducing a modern Vue 3 + Composition API-based structure. Focused on maintainability, state management, and team coordination across migration phases.',
+    stack: ['Vue 3', 'Pinia', 'TypeScript', 'OCR', 'Pdf.js'],
+    group: 'main'
+  },
+  {
+    title: 'Niche E-commerce Platform',
+    subtitle: 'E-commerce platform for subscription-based and product-driven content delivery.',
+    description: 'Built a custom shopping experience with product listings, cart flows, and checkout logic tailored to niche content-driven commerce. Worked on UI interactions, animations, and conversion-focused user flows.',
+    stack: ['Next.js', 'Framer Motion', 'custom e-commerce logic', 'TypeScript'],
+    group: 'additional'
+  },
+  {
+    title: 'Venue Rental Marketplace',
+    subtitle: 'Full-stack marketplace platform for short- and long-term rental spaces for events and temporary use cases.',
+    description: 'Designed and implemented core product flows including listings, search, and booking systems. Worked across frontend and backend layers, supporting data-driven marketplace functionality and user-to-host interactions.',
+    stack: ['React', 'Redux', 'Ruby on Rails', 'Node.js', 'MongoDB', 'TypeScript'],
+    group: 'additional'
+  },
+  {
+    title: 'Virtual Goods & Avatar Customization Platform',
+    subtitle: 'Consumer-facing platform for gaming and streaming customization targeted at Asian markets.',
+    description: 'Developed shop and customization systems for virtual items, avatars, and progression-related UI elements used in streaming contexts. Focused on engagement-driven interfaces, performance optimization, and real-time UI updates.',
+    stack: ['React', 'WebSockets', 'TypeScript', 'Tailwind'],
+    group: 'additional'
+  },
+  {
+    title: 'Construction Operations Platform',
+    subtitle: 'Management of constructions, contractors, and negotiation workflows for enterprise clients.',
+    description: 'Built tools supporting project coordination, contractor management, and contract negotiation workflows. Worked within a monorepo architecture spanning frontend and backend systems, focusing on structured business logic and complex form-driven interfaces.',
+    stack: ['React', 'TypeScript', 'Monorepo architecture', 'React Hook Form', 'Zustand'],
+    group: 'additional'
+  }
+];
+
+const mainItems = items.filter(item => item.group === 'main');
+const additionalItems = items.filter(item => item.group === 'additional');
+---
+<section id="projects" class="projects-section" aria-labelledby="projects-title">
 	<div class="section-inner">
 		<div class="section-heading">
 			<p class="eyebrow">Case Studies</p>
-			<h2 id="projects-title">Lorem ipsum dolor sit amet</h2>
+
+			<h2 class="projects-title">
+				Building products, driving business
+			</h2>
+
+			<p class="section-intro">
+				A selection of long-term collaborations and products I've helped
+				build, scale, and evolve over the last decade.
+			</p>
 		</div>
 
-		<div class="project-grid">
+		<div class="projects-list">
 			{
-				items.map((item) => (
+				mainItems.map((item, index) => (
 					<article class="project-card">
-						<p>{item.category}</p>
-						<h3>{item.title}</h3>
-						<span>{item.description}</span>
+						<div class="project-number">
+							{String(index + 1).padStart(2, '0')}
+						</div>
+
+						<div class="project-content">
+							<h3>{item.title}</h3>
+
+							{item.subtitle && (
+								<p class="project-subtitle">
+									{item.subtitle}
+								</p>
+							)}
+
+							<p class="project-description">
+								{item.description}
+							</p>
+
+							{
+								item.stack && (
+									<div class="project-stack">
+										{item.stack.map((tech) => (
+											<span>{tech}</span>
+										))}
+									</div>
+								)
+							}
+						</div>
 					</article>
 				))
 			}
+		</div>
+
+		<div class="cta-block">
+			<h3>Seen enough?</h3>
+			<p>
+				Let's discuss your project.
+			</p>
+			<div class="cta-button-wrapper">
+				<CtaButton href="#contact" label="Get in touch" ariaLabel="Scroll to contact form" immediate />
+			</div>
+		</div>
+
+		<div class="projects-list secondary">
+			{
+				additionalItems.map((item, index) => (
+					<article class="project-card">
+						<div class="project-number">
+							{String(index + mainItems.length + 1).padStart(2, '0')}
+						</div>
+
+						<div class="project-content">
+							<h3>{item.title}</h3>
+
+							{item.subtitle && (
+								<p class="project-subtitle">
+									{item.subtitle}
+								</p>
+							)}
+
+							<p class="project-description">
+								{item.description}
+							</p>
+
+							{
+								item.stack && (
+									<div class="project-stack">
+										{item.stack.map((tech) => (
+											<span>{tech}</span>
+										))}
+									</div>
+								)
+							}
+						</div>
+					</article>
+				))
+			}
+		</div>
+
+		<div class="more-experience">
+			<p class="eyebrow">Additional Experience</p>
+
+			<h3>20+ more commercial projects</h3>
+
+			<p>
+				Beyond the projects highlighted above, I've contributed to over
+				twenty additional commercial products ranging from short
+				consulting engagements to multi-year collaborations.
+			</p>
+
+			<p>
+				My experience includes mobile applications built with React
+				Native and Ionic, real-time systems powered by WebSockets,
+				enterprise platforms developed with Angular and Vue, design
+				systems, internal business tooling, payroll software, retail
+				solutions, publishing platforms, and AI-assisted products.
+			</p>
 		</div>
 	</div>
 </section>
 
 <style>
-	.section {
-		padding: clamp(56px, 9vw, 112px) 0;
+	.projects-section {
+		padding: clamp(56px, 7vw, 112px) 0;
+		background: radial-gradient(
+			ellipse at center, 
+			color-mix(in srgb, var(--accent) 14%, transparent) 0%, 
+			transparent 65%
+		);
 	}
 
 	.section-inner {
@@ -49,17 +205,12 @@ const items = [
 		margin: 0 auto;
 	}
 
-	.projects {
-		background: #ffffff;
-	}
-
 	.section-heading {
-		display: grid;
-		gap: 12px;
+		margin-bottom: 48px;
 	}
 
 	.eyebrow {
-		margin: 0;
+		margin: 0 0 18px;
 		color: var(--accent);
 		font-size: 13px;
 		font-weight: 800;
@@ -67,76 +218,173 @@ const items = [
 		text-transform: uppercase;
 	}
 
-	h2 {
-		max-width: 780px;
+	.section-heading h2 {
 		margin: 0;
-		color: #111827;
-		font-size: clamp(34px, 5vw, 64px);
-		line-height: 1;
-		letter-spacing: 0;
+		font-size: clamp(3rem, 6vw, 5rem);
+		line-height: 0.95;
+		letter-spacing: -0.04em;
+		color: #0f172a;
+		max-width: 900px;
 	}
 
-	.project-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 16px;
-		margin-top: 36px;
-		margin-bottom: 90px;
+	.section-intro {
+		margin-top: 28px;
+		font-size: 1.25rem;
+		line-height: 1.8;
+		color: #475569;
+	}
+
+	.projects-list {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
 	}
 
 	.project-card {
 		display: flex;
-		min-width: 0;
-		min-height: 240px;
-		flex-direction: column;
-		justify-content: space-between;
+		gap: 40px;
+		padding: 42px;
+		background: white;
 		border: 1px solid #e2e8f0;
-		border-radius: 8px;
-		padding: 22px;
-		background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+		border-radius: 24px;
 	}
 
-	.project-card p {
-		margin: 0;
-		color: var(--accent);
-		font-size: 12px;
+	.project-number {
+		flex-shrink: 0;
+		width: 60px;
+		font-size: 14px;
 		font-weight: 800;
-		text-transform: uppercase;
+		color: var(--accent);
+		letter-spacing: 0.12em;
+		padding-top: 6px;
 	}
 
-	h3 {
-		margin: 10px 0 0;
-		color: #111827;
-		font-size: 22px;
-		line-height: 1.2;
-		letter-spacing: 0;
+	.project-content {
+		max-width: 900px;
 	}
 
-	.project-card span {
-		display: block;
-		margin-top: 28px;
+	.project-content h3 {
+		margin: 0;
+		font-size: clamp(2rem, 3vw, 2.75rem);
+		line-height: 1;
+		letter-spacing: -0.04em;
+		color: #0f172a;
+	}
+
+	.project-subtitle {
+		margin: 24px 0 0;
+		font-size: 1.25rem;
+		font-weight: 500;
+		line-height: 1.7;
+		color: #0f172a;
+	}
+
+	.project-description {
+		margin: 24px 0 0;
+		font-size: 1.125rem;
+		line-height: 1.7;
 		color: #475569;
-		font-size: 16px;
-		line-height: 1.6;
 	}
 
-	@media (max-width: 820px) {
-		.project-grid {
-			grid-template-columns: 1fr;
-		}
+	.project-stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-top: 40px;
+	}
 
+	.project-stack span {
+		display: inline-flex;
+		align-items: center;
+		height: 38px;
+		padding: 0 16px;
+		border-radius: 999px;
+		background: #eff6ff;
+		border: 1px solid #dbeafe;
+		color: #1e3a8a;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.cta-button-wrapper {
+		position: relative;
+		padding-top: 64px;
+	}
+
+	.cta-block {
+		text-align: center;
+		padding: 120px 0;
+		background: radial-gradient(
+			ellipse at center, 
+			color-mix(in srgb, #fff 14%, transparent) 0%, 
+			transparent 65%
+		);
+	}
+
+	.cta-block h3 {
+		margin: 0;
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		line-height: 1;
+		letter-spacing: -0.04em;
+		color: #0f172a;
+	}
+
+	.cta-block p {
+		margin: 20px 0 32px;
+		font-size: 1.2rem;
+		color: #64748b;
+	}
+
+	.cta-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 56px;
+		padding: 0 28px;
+		border-radius: 12px;
+		background: #0b132b;
+		color: white;
+		text-decoration: none;
+		font-weight: 700;
+		transition: transform 0.2s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-2px);
+	}
+
+	.secondary {
+		margin-bottom: 120px;
+	}
+
+	.more-experience h3 {
+		margin: 0 0 24px;
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		line-height: 1;
+		letter-spacing: -0.04em;
+		color: #0f172a;
+	}
+
+	.more-experience p:not(.eyebrow) {
+		font-size: 1.125rem;
+		font-size: clamp(1.125rem, 3vw, 1.5rem);
+		line-height: 1.9;
+		color: #475569;
+	}
+
+	@media (max-width: 768px) {
 		.project-card {
-			min-height: 190px;
-		}
-	}
-
-	@media (max-width: 520px) {
-		.section {
-			padding: 48px 0;
+			flex-direction: column;
+			gap: 20px;
+			padding: 28px;
 		}
 
-		.section-inner {
-			width: min(100% - 28px, 1120px);
+		.project-number {
+			width: auto;
+		}
+
+		.section-heading {
+			margin-bottom: 56px;
 		}
 	}
 </style>
