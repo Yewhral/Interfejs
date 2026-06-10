@@ -6,21 +6,52 @@ const items = [
   {
     title: 'Sales Engagement Platform',
     subtitle: 'Large-scale SaaS platform used by thousands of field representatives and managers across multiple markets.',
-    description: 'Contributed to the evolution of the product from an early-stage startup into a mature, market-leading platform over multiple years of continuous development. Played a key role in shaping and scaling the frontend architecture as the product expanded in complexity, user base, and feature scope. Shipped high-performance, data-intensive interfaces supporting mapping-based workflows, reporting systems, and real-time event-driven features. Worked extensively with Google Maps-driven interfaces, WebSocket-based interactions, and an AI-assisted chat layer integrated into core product flows.',
-    stack: ['React', 'TypeScript', 'Redux', 'RTK Query', 'Google Maps API', 'REST APIs', 'WebSockets', 'Chart.js', 'Tailwind', 'SASS', 'AI'],
+    whatIdid: [
+			{ 
+				header: 'From Startup to Scale',
+				content: 'Contributed to the evolution of a SaaS platform from early-stage to market-leading maturity, gaining deep understanding of the long-term impact of architectural decisions.',
+			},
+			{
+				header: 'AI & Real-time Systems',
+				content: 'Built AI-powered chat and features across the application, leveraging WebSockets for real-time interaction and distributed event-driven updates.'
+			},
+			{
+				header: 'Geospatial & High-Performance UI',
+				content: 'Designed and implemented complex geospatial interfaces using Google Maps API, with a strong focus on performance and usability at scale.'
+			},
+			{
+				header: 'Communication & Telephony Integration',
+				content: 'Integrated telephony services to enable in-app SMS and voice calling capabilities directly from the web platform.'
+			},
+			{
+				header: 'Internal Operations Tools',
+				content: 'Built and maintained internal tooling for US-based customer support teams, streamlining workflows and improving operational efficiency.',
+			}
+		],
+		stack: ['React', 'TypeScript', 'Redux', 'RTK Query', 'Google Maps API', 'REST APIs', 'WebSockets', 'Chart.js', 'Tailwind', 'SASS', 'AI', 'D3.js'],
     group: 'main'
   },
   {
     title: 'Presentation Visualization Platform',
     subtitle: 'Data-driven presentation and visualization tool inspired by slide-based editors, built around a canvas-based rendering engine.',
     description: 'Developed a highly interactive interface for generating and manipulating presentation-like content from structured data sources. Focused on performance, dynamic layout systems, and responsive canvas interactions. The project emphasized real-time rendering logic and UI composition patterns similar to modern presentation tools.',
-    stack: ['React', 'Canvas API', 'TypeScript', 'MUI'],
+    whatIdid: [
+			{ header: '', content: '' },
+			{ header: '', content: '' },
+			{ header: '', content: '' },
+		],
+		stack: ['React', 'Canvas API', 'TypeScript', 'MUI'],
     group: 'main'
   },
   {
     title: 'Energy Documentation & Compliance Platform',
     subtitle: 'Energy sector platform for generating and managing energy efficiency documentation and related workflows.',
     description: 'Built a cross-platform application (web + mobile via Ionic Capacitor) focused on structured data entry, complex validation-heavy forms, and generation of standardized reports such as energy certificates. Supported white-labeled deployments and configurable landing pages for different clients and regions.',
+    whatIdid: [
+      { header: '', content: '' },
+      { header: '', content: '' },
+      { header: '', content: '' },
+    ],
     stack: ['React', 'Ionic', 'Capacitor', 'React Hook Form', 'TypeScript'],
     group: 'main'
   },
@@ -28,6 +59,11 @@ const items = [
     title: '3D Spatial Visualization Platform',
     subtitle: 'Interactive 3D visualization platform for construction and real estate applications.',
     description: 'Developed browser-based tool for exploring spatial data, including buildings, interiors, and urban environments. Worked on performance-heavy rendering pipelines, interactive camera controls, and animation systems for smooth transitions between states. Integrated Three.js with additional animation tooling to support complex scene interactions and data-driven visualizations.',
+    whatIdid: [
+      { header: '', content: '' },
+      { header: '', content: '' },
+      { header: '', content: '' },
+    ],
     stack: ['Three.js', 'WebGL', 'Tween.js', 'JavaScript'],
     group: 'main'
   },
@@ -35,6 +71,11 @@ const items = [
     title: 'Document Processing & Invoice Automation Platform',
     subtitle: 'Migration of project from React to Vue 3.',
     description: 'Acted as technical lead for frontend architecture decisions during a large-scale rewrite, ensuring feature parity while introducing a modern Vue 3 + Composition API-based structure. Focused on maintainability, state management, and team coordination across migration phases.',
+    whatIdid: [
+      { header: '', content: '' },
+      { header: '', content: '' },
+      { header: '', content: '' },
+    ],
     stack: ['Vue 3', 'Pinia', 'TypeScript', 'OCR', 'Pdf.js'],
     group: 'main'
   },
@@ -102,6 +143,33 @@ const additionalItems = items.filter(item => item.group === 'additional');
 									{item.subtitle}
 								</p>
 							)}
+
+							{
+								item.whatIdid && (
+									// <ul class="project-highlights-list">
+									// 	{item.whatIdid.map((item) => (
+									// 		<li class="project-highlights-list_item">
+									// 			<strong>{item.header}</strong>
+									// 			<span class="project-description">{item.content}</span>
+									// 		</li>
+									// 	))}
+									// </ul>
+									<ul class="project-highlights-list">
+										{item.whatIdid.map((item) => (
+											<li class="project-highlights-list_item">
+												<div class="project-highlights-title">
+													{item.header}
+												</div>
+
+												<div class="project-highlights-content">
+													{item.content}
+												</div>
+											</li>
+										))}
+									</ul>
+								)
+							}
+
 
 							<p class="project-description">
 								{item.description}
@@ -272,7 +340,7 @@ const additionalItems = items.filter(item => item.group === 'additional');
 	}
 
 	.project-subtitle {
-		margin: 24px 0 0;
+		margin: 36px 0 0;
 		font-size: 1.25rem;
 		font-weight: 500;
 		line-height: 1.7;
@@ -283,6 +351,37 @@ const additionalItems = items.filter(item => item.group === 'additional');
 		margin: 24px 0 0;
 		font-size: 1.125rem;
 		line-height: 1.7;
+		color: #475569;
+	}
+
+	.project-highlights-list {
+		margin: 40px 0 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		border-top: 1px solid #e2e8f0;
+	}
+
+	.project-highlights-list_item {
+		display: grid;
+		grid-template-columns: 260px 1fr;
+		gap: 32px;
+		padding: 24px 0;
+		border-bottom: 1px solid #e2e8f0;
+		align-items: start;
+	}
+
+	.project-highlights-title {
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.4;
+		color: #0f172a;
+	}
+
+	.project-highlights-content {
+		font-size: 1rem;
+		line-height: 1.75;
 		color: #475569;
 	}
 
@@ -386,6 +485,12 @@ const additionalItems = items.filter(item => item.group === 'additional');
 
 		.section-heading {
 			margin-bottom: 56px;
+		}
+
+		.project-highlights-list_item {
+			grid-template-columns: 1fr;
+			gap: 8px;
+			padding: 20px 0;
 		}
 	}
 </style>
