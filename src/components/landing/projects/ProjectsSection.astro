@@ -9,23 +9,23 @@ const items = [
     whatIdid: [
 			{ 
 				header: 'From Startup to Scale',
-				content: 'Contributed to the evolution of a SaaS platform from early-stage to market-leading maturity, gaining deep understanding of the long-term impact of architectural decisions.',
+				content: 'Contributed to the evolution of a SaaS platform from early-stage to market-leading maturity, gaining deep understanding of the **long-term impact of architectural decisions**.',
 			},
 			{
 				header: 'AI & Real-time Systems',
-				content: 'Built AI-powered chat and features across the application, leveraging WebSockets for real-time interaction and distributed event-driven updates.'
+				content: 'Built **AI-powered chat and features** across the application, leveraging WebSockets for **real-time interaction** and distributed event-driven updates.'
 			},
 			{
 				header: 'Geospatial & High-Performance UI',
-				content: 'Designed and implemented complex geospatial interfaces using Google Maps API, with a strong focus on performance and usability at scale.'
+				content: 'Designed and implemented complex geospatial interfaces using Google Maps API, with a strong focus on **performance and usability at scale**.'
 			},
 			{
 				header: 'Communication & Telephony Integration',
-				content: 'Integrated telephony services to enable in-app SMS and voice calling capabilities directly from the web platform.'
+				content: 'Integrated telephony services to enable **in-app SMS and voice calling** capabilities directly from the web platform.'
 			},
 			{
 				header: 'Internal Operations Tools',
-				content: 'Built and maintained internal tooling for US-based customer support teams, streamlining workflows and improving operational efficiency.',
+				content: 'Built and maintained internal tooling for US-based customer support teams, **streamlining workflows** and improving operational efficiency.',
 			}
 		],
 		stack: ['React', 'TypeScript', 'Redux', 'RTK Query', 'Google Maps API', 'REST APIs', 'WebSockets', 'Chart.js', 'Tailwind', 'SASS', 'AI', 'D3.js'],
@@ -34,47 +34,79 @@ const items = [
   {
     title: 'Presentation Visualization Platform',
     subtitle: 'Data-driven presentation and visualization tool inspired by slide-based editors, built around a canvas-based rendering engine.',
-    description: 'Developed a highly interactive interface for generating and manipulating presentation-like content from structured data sources. Focused on performance, dynamic layout systems, and responsive canvas interactions. The project emphasized real-time rendering logic and UI composition patterns similar to modern presentation tools.',
-    whatIdid: [
-			{ header: '', content: '' },
-			{ header: '', content: '' },
-			{ header: '', content: '' },
-		],
+		whatIdid: [
+      { 
+        header: 'Frontend Team Coordination', 
+        content: 'Coordinated a **team of frontend developers**, aligning technical approaches, conducting code reviews, and ensuring smooth feature delivery across development phases.' 
+      },
+      { 
+        header: 'Canvas Rendering Engine', 
+        content: 'Leveraged the Canvas API to build a highly interactive editor supporting **dynamic charts, flowchart systems, and interactive shapes** driven by shifting, live data sources.' 
+      },
+      { 
+        header: 'Data-Dense Dynamic Components', 
+        content: 'Designed and optimized a **large, editable data table** that handles various data types with real-time rendering logic, blending spreadsheet utility with presentation layouts.' 
+      },
+    ],
 		stack: ['React', 'Canvas API', 'TypeScript', 'MUI'],
     group: 'main'
   },
   {
     title: 'Energy Documentation & Compliance Platform',
     subtitle: 'Energy sector platform for generating and managing energy efficiency documentation and related workflows.',
-    description: 'Built a cross-platform application (web + mobile via Ionic Capacitor) focused on structured data entry, complex validation-heavy forms, and generation of standardized reports such as energy certificates. Supported white-labeled deployments and configurable landing pages for different clients and regions.',
     whatIdid: [
-      { header: '', content: '' },
-      { header: '', content: '' },
-      { header: '', content: '' },
-    ],
-    stack: ['React', 'Ionic', 'Capacitor', 'React Hook Form', 'TypeScript'],
+      { 
+        header: 'Cross-Platform Mobile Integration', 
+        content: 'Developed a unified codebase for web and mobile applications utilizing **Ionic and Capacitor**, making use of **Firebase services** and real-time data.' 
+      },
+      { 
+        header: 'Complex Validation Engine', 
+        content: 'Engineered an advanced, **multi-step wizard form system** designed to handle heavy data entry, strict compliance rules, and dynamic cross-field validations.' 
+      },
+      { 
+        header: 'White-Label Infrastructure', 
+        content: 'Architected a scalable subsystem for **white-labeled deployments**, enabling customizable landing pages and tailored branding configurations for diverse enterprise clients.' 
+      },
+		],
+    stack: ['React', 'Ionic', 'Capacitor', 'React Hook Form', 'TypeScript', 'Firebase'],
     group: 'main'
   },
   {
     title: '3D Spatial Visualization Platform',
     subtitle: 'Interactive 3D visualization platform for construction and real estate applications.',
-    description: 'Developed browser-based tool for exploring spatial data, including buildings, interiors, and urban environments. Worked on performance-heavy rendering pipelines, interactive camera controls, and animation systems for smooth transitions between states. Integrated Three.js with additional animation tooling to support complex scene interactions and data-driven visualizations.',
-    whatIdid: [
-      { header: '', content: '' },
-      { header: '', content: '' },
-      { header: '', content: '' },
+ 		whatIdid: [
+      { 
+        header: 'Performance-Heavy 3D Rendering', 
+        content: 'Optimized complex WebGL rendering pipelines using **Three.js**, managing asset loading and scene graphs to ensure smooth performance across various browser environments.' 
+      },
+      { 
+        header: 'Advanced Camera Navigation', 
+        content: 'Engineered custom interactive camera controls and interpolation systems for **seamless transitions between exterior urban views and detailed building interiors**, ensuring intuitive spatial orientation.' 
+      },
+      { 
+        header: 'Interface Architecture & Styling', 
+        content: 'Designed and built the application UI overlays overlaying the 3D canvas, managing modular layout structures and responsive layouts using **SCSS and modern JavaScript components**.' 
+      },
     ],
-    stack: ['Three.js', 'WebGL', 'Tween.js', 'JavaScript'],
+    stack: ['Three.js', 'WebGL', 'Tween.js', 'JavaScript', 'SCSS'],
     group: 'main'
   },
   {
     title: 'Document Processing & Invoice Automation Platform',
     subtitle: 'Migration of project from React to Vue 3.',
-    description: 'Acted as technical lead for frontend architecture decisions during a large-scale rewrite, ensuring feature parity while introducing a modern Vue 3 + Composition API-based structure. Focused on maintainability, state management, and team coordination across migration phases.',
     whatIdid: [
-      { header: '', content: '' },
-      { header: '', content: '' },
-      { header: '', content: '' },
+      { 
+        header: 'Technical Leadership & Migration', 
+        content: 'Acted as lead developer during a **large-scale system migration from React to Vue 3**, mapping out architecture and composition patterns to guarantee zero regressions.' 
+      },
+      { 
+        header: 'OCR Verification Interface', 
+        content: 'Developed an interactive interface for scanning PDF plans, allowing users to **review and manually correct OCR data mismatches** directly within the browser app.' 
+      },
+      { 
+        header: 'Order & Pricing Engine', 
+        content: 'Implemented complex client-side workflows for **generating order specifications, automatically calculating product prices, margins, and totals** based on corrected plan data.' 
+      },
     ],
     stack: ['Vue 3', 'Pinia', 'TypeScript', 'OCR', 'Pdf.js'],
     group: 'main'
@@ -111,6 +143,13 @@ const items = [
 
 const mainItems = items.filter(item => item.group === 'main');
 const additionalItems = items.filter(item => item.group === 'additional');
+
+function formatContent(text: string) {
+  return text.replace(
+    /\*\*(.*?)\*\*/g,
+    '<strong class="project-highlights-content-strong">$1</strong>'
+  );
+}
 ---
 <section id="projects" class="projects-section" aria-labelledby="projects-title">
 	<div class="section-inner">
@@ -146,14 +185,6 @@ const additionalItems = items.filter(item => item.group === 'additional');
 
 							{
 								item.whatIdid && (
-									// <ul class="project-highlights-list">
-									// 	{item.whatIdid.map((item) => (
-									// 		<li class="project-highlights-list_item">
-									// 			<strong>{item.header}</strong>
-									// 			<span class="project-description">{item.content}</span>
-									// 		</li>
-									// 	))}
-									// </ul>
 									<ul class="project-highlights-list">
 										{item.whatIdid.map((item) => (
 											<li class="project-highlights-list_item">
@@ -161,9 +192,7 @@ const additionalItems = items.filter(item => item.group === 'additional');
 													{item.header}
 												</div>
 
-												<div class="project-highlights-content">
-													{item.content}
-												</div>
+												<div class="project-highlights-content" set:html={formatContent(item.content)} />
 											</li>
 										))}
 									</ul>
@@ -383,6 +412,11 @@ const additionalItems = items.filter(item => item.group === 'additional');
 		font-size: 1rem;
 		line-height: 1.75;
 		color: #475569;
+	}
+
+	:global(.project-highlights-content-strong) {
+		font-weight: 500;
+		color: #0f172a;
 	}
 
 	.project-stack {
