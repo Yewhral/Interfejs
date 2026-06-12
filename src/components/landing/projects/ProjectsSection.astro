@@ -111,31 +111,31 @@ const items = [
     stack: ['Vue 3', 'Pinia', 'TypeScript', 'OCR', 'Pdf.js'],
     group: 'main'
   },
-  {
+{
     title: 'Niche E-commerce Platform',
     subtitle: 'E-commerce platform for subscription-based and product-driven content delivery.',
-    description: 'Built a custom shopping experience with product listings, cart flows, and checkout logic tailored to niche content-driven commerce. Worked on UI interactions, animations, and conversion-focused user flows.',
+    description: 'Built a custom shopping experience with product listings, **cart flows, and checkout logic** tailored to niche content-driven commerce. Worked on **UI interactions, animations**, and conversion-focused user flows.',
     stack: ['Next.js', 'Framer Motion', 'custom e-commerce logic', 'TypeScript'],
     group: 'additional'
   },
   {
     title: 'Venue Rental Marketplace',
     subtitle: 'Full-stack marketplace platform for short- and long-term rental spaces for events and temporary use cases.',
-    description: 'Designed and implemented core product flows including listings, search, and booking systems. Worked across frontend and backend layers, supporting data-driven marketplace functionality and user-to-host interactions.',
+    description: 'Designed and implemented core product flows including **listings, search, and booking systems**. Worked across frontend and backend layers, supporting **data-driven marketplace functionality** and user-to-host interactions.',
     stack: ['React', 'Redux', 'Ruby on Rails', 'Node.js', 'MongoDB', 'TypeScript'],
     group: 'additional'
   },
   {
     title: 'Virtual Goods & Avatar Customization Platform',
     subtitle: 'Consumer-facing platform for gaming and streaming customization targeted at Asian markets.',
-    description: 'Developed shop and customization systems for virtual items, avatars, and progression-related UI elements used in streaming contexts. Focused on engagement-driven interfaces, performance optimization, and real-time UI updates.',
+    description: 'Developed shop and customization systems for **virtual items, avatars, and progression-related UI elements** used in streaming contexts. Focused on engagement-driven interfaces, performance optimization, and **real-time UI updates**.',
     stack: ['React', 'WebSockets', 'TypeScript', 'Tailwind'],
     group: 'additional'
   },
   {
     title: 'Construction Operations Platform',
     subtitle: 'Management of constructions, contractors, and negotiation workflows for enterprise clients.',
-    description: 'Built tools supporting project coordination, contractor management, and contract negotiation workflows. Worked within a monorepo architecture spanning frontend and backend systems, focusing on structured business logic and complex form-driven interfaces.',
+    description: 'Built tools supporting project coordination, contractor management, and **contract negotiation workflows**. Worked within a **monorepo architecture spanning frontend and backend systems**, focusing on structured business logic and complex form-driven interfaces.',
     stack: ['React', 'TypeScript', 'Monorepo architecture', 'React Hook Form', 'Zustand'],
     group: 'additional'
   }
@@ -156,7 +156,7 @@ function formatContent(text: string) {
 		<div class="section-heading">
 			<p class="eyebrow">Case Studies</p>
 
-			<h2 class="projects-title">
+			<h2 class="projects-title" id="projects-title">
 				Building products, driving business
 			</h2>
 
@@ -198,11 +198,6 @@ function formatContent(text: string) {
 									</ul>
 								)
 							}
-
-
-							<p class="project-description">
-								{item.description}
-							</p>
 
 							{
 								item.stack && (
@@ -246,9 +241,7 @@ function formatContent(text: string) {
 								</p>
 							)}
 
-							<p class="project-description">
-								{item.description}
-							</p>
+							<p class="project-description" set:html={formatContent(item.description || '')} />
 
 							{
 								item.stack && (
@@ -276,13 +269,33 @@ function formatContent(text: string) {
 				consulting engagements to multi-year collaborations.
 			</p>
 
-			<p>
-				My experience includes mobile applications built with React
-				Native and Ionic, real-time systems powered by WebSockets,
-				enterprise platforms developed with Angular and Vue, design
-				systems, internal business tooling, payroll software, retail
-				solutions, publishing platforms, and AI-assisted products.
-			</p>
+		<ul class="additional-skills-list">
+			<li class="additional-skills-list_item">
+				<strong>Frameworks:</strong>
+				React, React Native, Angular, Vue 2/3, Ionic, Capacitor
+			</li>
+
+			<li class="additional-skills-list_item">
+				<strong>Industries:</strong>
+				Banking, FinTech, Payroll, Healthcare, Education, Retail, Publishing, Enterprise SaaS
+			</li>
+
+			<li class="additional-skills-list_item">
+				<strong>Frontend Focus:</strong>
+				Design Systems, Data-heavy Applications, Reporting & Analytics, AI-powered Interfaces, Real-time Features
+			</li>
+
+			<li class="additional-skills-list_item">
+				<strong>Enterprise:</strong>
+				SharePoint, Internal Platforms, Legacy Browser Support, Framework Upgrades & Modernization
+			</li>
+
+			<li class="additional-skills-list_item">
+				<strong>Tooling:</strong>
+				Chakra UI, Material UI, Storybook, GitHub Actions, CI/CD Workflows
+			</li>
+		</ul>
+
 		</div>
 	</div>
 </section>
@@ -502,8 +515,42 @@ function formatContent(text: string) {
 	.more-experience p:not(.eyebrow) {
 		font-size: 1.125rem;
 		font-size: clamp(1.125rem, 3vw, 1.5rem);
-		line-height: 1.9;
+		line-height: 1.7;
 		color: #475569;
+	}
+
+	.additional-skills-list {
+		margin: 32px 0 0 0;
+		justify-content: center;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.additional-skills-list_item {
+		position: relative;
+		padding-left: 24px;
+		font-size: 1.125rem;
+		line-height: 1.6;
+		color: #475569;
+	}
+
+	.additional-skills-list_item::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 10px;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: var(--accent); 
+	}
+
+	.additional-skills-list strong {
+		font-weight: 600;
+		color: #0f172a;
 	}
 
 	@media (max-width: 768px) {
@@ -527,4 +574,5 @@ function formatContent(text: string) {
 			padding: 20px 0;
 		}
 	}
+
 </style>
